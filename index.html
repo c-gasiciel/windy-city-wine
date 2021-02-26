@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>Windy City Wine & Beverage</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="stylesheets/home-style.css" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="scripts/slide.js"></script>
+
+</head>
+
+<!-- Dropdown menu adapted from
+https://www.w3schools.com/howto/howto_css_dropdown_navbar.asp -->
+<body>
+  <!-- Menu -->
+  <nav id="navbar">
+    <div class="navbar-left">
+      <a href="index.html">
+        Windy City Wine & Beverage
+      </a>
+    </div>
+
+
+    <div class="navbar-right">
+      <a href="index.html">Home</a>
+
+      <div class="dropdown">
+        <button class="dropButton">Wine</button>
+        <div class="dropItems">
+          <a href="sparkling-wine.html">Sparkling</a>
+          <a href="white-wine.html">White</a>
+          <a href="red-wine.html">Red</a>
+        </div>
+      </div>
+
+      <a href="sake.html">Sake</a>
+      <a href="tea.html">Tea</a>
+      <a href="about.html">Our Story</a>
+      <a href="contact-us.html">Contact Us</a>
+    </div>
+  </nav>
+
+
+<div class="main">
+  <!-- Carousel adapted from https://designmodo.com/create-full-screen-slider/ -->
+<div class="carousel">
+  <input type="radio" name="slider" class="slide-radio01" checked id="slider01">
+  <input type="radio" name="slider" class="slide-radio02" id="slider02">
+  <input type="radio" name="slider" class="slide-radio03" id="slider03">
+  <input type="radio" name="slider" class="slide-radio04" id="slider04">
+
+  <div class="slider-pagination">
+    <label for="slider01" class="page01"></label>
+    <label for="slider02" class="page02"></label>
+    <label for="slider03" class="page03"></label>
+    <label for="slider04" class="page04"></label>
+  </div>
+
+  <!-- Slide 1 -->
+  <div class="slider photo01">
+    <div class="slide-content">
+      <h3>Purveyors of beverages sourced with the utmost care.</h3>
+      <p class="photo-credit">Photo courtesy of <a href="https://www.longuevillemanor.com/wine-cellar">
+        Longueville Manor</a>
+      </p>
+    </div>
+  </div>
+
+
+ <!-- Slide 2 -->
+  <div class="slider photo02">
+    <div class="slide-content">
+      <h3>Discover our our rare yet approachable wines.</h3>
+      <p class="photo-credit">Photo courtesy of <a href="https://www.verrado.com/dining-ciao-grazie-pizzeria-wine-bar/">
+        Ciao Grazie Pizzeria and Wine Bar</a>
+      </p>
+    </div>
+  </div>
+
+
+  <!-- Slide 3 -->
+  <div class="slider photo03">
+    <div class="slide-content">
+      <h3>Explore our variety of rare premium sake.</h3>
+      <p class="photo-credit">Photo courtesy of <a href="http://www.gakusushi.com/sake/">Gaku
+        Sushi</a></p>
+    </div>
+  </div>
+
+
+  <!-- Slide 4 -->
+  <div class="slider photo04">
+    <div class="slide-content">
+      <h3>Venture into a world of exceptional, globally sourced teas.</h3>
+      <p class="photo-credit">Photo by <a href="http://newbyteas.us/blog/2017/01/28/japanese-green-tea/">
+      Newby Teas </a></p>
+    </div>
+  </div>
+
+</div>
+
+</div>
+
+
+
+  <div class="footer">
+  </div>
+</body>
+</html>

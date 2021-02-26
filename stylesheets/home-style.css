@@ -1,0 +1,446 @@
+/* Fixed navbar attributes adapted from
+https://www.w3schools.com/howto/howto_css_fixed_menu.asp */
+
+* {
+  box-sizing: border-box;
+}
+
+
+body, html {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  font-family: 'Raleway', sans-serif;
+}
+
+
+/* Navbar styling */
+#navbar{
+  background-color: white;
+  /*background-color: rgba(0, 0, 0, 0);*/
+  font-family: 'Raleway', sans-serif;
+  z-index: 1;
+
+  /* Additions */
+  /* Set up flexbox */
+  display: flex;
+  /*position: absolute; */
+  width: 100%;
+  height: 80px;
+  padding: 0 50px;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+}
+
+
+.navbar-left a{
+  margin-left: -33px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+
+.navbar-right {
+  display: flex;
+  align-itmes: center;
+}
+
+
+.navbar-right a{
+  color: black;
+  display: inline-block;
+  font-size: 16px;
+  padding: 14px 16px;
+  text-align: center;
+  text-decoration: none;
+
+  transition: all .2s;
+}
+
+
+
+.dropdown{
+  /*
+  float: right;
+  */
+  display: inline-block;
+  overflow: hidden;
+  transition: all .2s;
+}
+
+
+.dropdown .dropButton{
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  color: black;
+  font-family: inherit;
+  font-size: 16px;
+  margin: 0;
+  padding: 14px 16px;
+  outline: none;
+}
+
+
+#navbar a:visited {
+  color: black;
+}
+
+
+#navbar a:hover, .dropdown:hover .dropButton{
+  background-color: black;
+  color: white;
+}
+
+
+.dropItems {
+  background-color: white;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0.2);
+  color: black;
+  display: none;
+  min-width: 160px;
+  position: absolute;
+  z-index: 1;
+}
+
+.dropItems a{
+  color: inherit;
+  display: block;
+  float: none;
+  padding: 12px 16px;
+  text-align: left;
+  text-decoration: none;
+}
+
+
+.dropItems a:hover {
+  background-color: black;
+  color: white;
+}
+
+.dropdown:hover .dropItems {
+  display: block;
+}
+
+
+.main {
+  margin-top: 30px;
+}
+
+
+/* Carousel adapted from
+https://designmodo.com/create-full-screen-slider/ */
+.carousel {
+  display: block;
+  background: #FFFF;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+
+.slider {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 1;
+  z-index: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  -webkit-transition: -webkit-transform 1600ms ease;
+  transition: -webkit-transform 1600ms ease, transform 1600ms ease;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+
+
+.photo01 {
+  background-image: url(backgrounds/winecellar.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  left:0;
+}
+
+
+.photo02 {
+  background-image: url(backgrounds/background01-alt.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  left: 100%;
+}
+
+
+.photo03 {
+  background-image: url(backgrounds/background04.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  left: 200%;
+}
+
+
+.photo04 {
+  background-image: url(backgrounds/background05.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  left: 300%;
+}
+
+
+.slider {
+  display: flex;
+  justify-content: flex-start;
+}
+
+
+.slide-content {
+  width: 600px;
+  padding-left: 100px;
+}
+
+
+.slider h3{
+  color: white;
+  text-shadow: 5px 5px 10px #000000;
+  line-height: 1.2;
+  -webkit-transform: translateX(600px);
+  transform: translateX(600px);
+  margin-top: 0;
+  letter-spacing: 2px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 26px;
+
+  /* Animate text */
+  -webkit-transition: opacity 800ms, -webkit-transform 800ms;
+  transition: transform 800ms, opacity 800ms;
+  -webkit-transition-delay: 1s;
+  transition-delay: 1s;
+}
+
+
+.photo03 h3 {
+  -webkit-transform: translateX(10px);
+  transform: translateX(10px);
+}
+
+
+.slider p {
+  text-align: right;
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
+  position: absolute;
+  bottom: 0;
+
+  -webkit-transform: translateX(750px);
+  transform: translateX(750px);
+
+  /* Animate text */
+  -webkit-transition: opacity 800ms, -webkit-transform 800ms;
+  transition: transform 800ms, opacity 800ms;
+  -webkit-transition-delay: 1s;
+  transition-delay: 1s;
+}
+
+
+.slider a:visited {
+  color:inherit;
+}
+
+
+.slider &gt; img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  height: auto;
+  width: 100%;
+  opacity: 0;
+  /* overflow: hidden; */
+  -webkit-transform: translateX(500px);
+  transform: translateX(500px);
+
+  /* Animate slides */
+  -webkit-transition: opacity 800ms, -webkit-transform 800ms;
+  transition: transform 800ms, opacity 800ms;
+  -webkit-transition-delay: 1.2s;
+  transition-delay: 1.2s;
+}
+
+
+
+.slider-pagination {
+  display: flex;
+  position: absolute;
+  bottom: 30px;
+  left: 100px;
+  width: 575px;
+  align-items: center;
+
+  /* make foremost element */
+  z-index: 1000;
+}
+
+
+.slider-pagination label {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+  background: white;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+
+.slide-radio01:checked ~ .slider-pagination .page01,
+.slide-radio02:checked ~ .slider-pagination .page02,
+.slide-radio03:checked ~ .slider-pagination .page03,
+.slide-radio04:checked ~ .slider-pagination .page04 {
+  width: 14px;
+  height: 14px;
+  border: 2px solid white;
+  background: transparent;
+}
+
+
+/* Create slide effect */
+.slide-radio01:checked ~ .slider {
+  -webkit-transform: translateX(0%);
+  transform: translateX(0%);
+}
+
+
+.slide-radio02:checked ~ .slider {
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+}
+
+
+.slide-radio03:checked ~ .slider {
+  -webkit-transform: translateX(-200%);
+  transform: translateX(-200%);
+}
+
+
+.slide-radio04:checked ~ .slider {
+  -webkit-transform: translateX(-300%);
+  transform: translateX(-300%);
+}
+
+.slide-radio01:checked ~ .photo01 h3,
+.slide-radio02:checked ~ .photo02 h3,
+.slide-radio03:checked ~ .photo03 h3,
+.slide-radio04:checked ~ .photo04 h3,
+.slide-radio01:checked ~ .photo01 p,
+.slide-radio02:checked ~ .photo02 p,
+.slide-radio03:checked ~ .photo03 p,
+.slide-radio04:checked ~ .photo04 p,
+.slide-radio01:checked ~ .photo01 &gt; img,
+.slide-radio02:checked ~ .photo02 &gt; img,
+.slide-radio03:checked ~ .photo03 &gt; img,
+.slide-radio04:checked ~ .photo04 &gt; img {
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+  opacity: 1;
+}
+
+
+/* Add responsiveness */
+@media only screen and (max-width: 768px) {
+  .navbar {
+    padding: 0 2%;
+  }
+
+
+  .navbar-left {
+    display: none;
+  }
+
+
+  .slider-pagination {
+    left: 2%;
+  }
+
+
+  .slider img {
+    right: 2%;
+  }
+
+
+  .pg01 img {
+    right: -110px;
+  }
+
+}
+
+
+/*
+#photoCarousel {
+  width: 720px;
+  height: 400px;
+  overflow: hidden;
+}
+
+
+#photoCarousel .slides {
+  display: block;
+  width: 6000px;
+  height: 400px;
+  margin: 0;
+  padding: 0;
+}
+
+
+#photoCarousel .photos {
+  float: left;
+  list-style-type: none;
+  width: 720px;
+  height: 400px;
+  z-index: -1;
+}
+
+*****
+.photoCarousel {
+  background-image: url("images/grapes.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+
+#slide1 {
+
+}
+*/
+
+/* Adapted from http://michaelsoriano.com/create-rotating-full-paged-background-images-with-css-and-jquery/ */
+/*
+.photoCarousel, img.rotate {
+  min-height: 100%;
+  min-width: 100%;
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+  max-width:100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+*/
